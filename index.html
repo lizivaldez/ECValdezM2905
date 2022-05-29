@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es-NI">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="William Sanchez G">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/Site.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/modal.css">	
+	<!-- agregado -->
+	<SCRIPT Type="text/javascript" src="assets/js/val.js"></SCRIPT>
+	<SCRIPT Type="text/javascript" src="assets/js/radio.js"></SCRIPT>
+	<SCRIPT Type="text/javascript" src="assets/js/checkbox.js"></SCRIPT>
+	<SCRIPt Type="text/javascript" src="assets/js/app.js"></SCRIPt>
+</head>
+<body>
+	<header>
+		<h1>Tienda de abarrotes</h1>
+	</header>
+	<section>
+		<article>
+			<!-- Dispara / abre el modal -->
+			<button id="AddButton" type="button" class="btn btn-default">Agregar</button>	
+			<hr>
+			<fieldset>
+				<legend>Factura</legend>
+				<table id="PersonTable">
+					<thead>
+						<tr>
+							<!-- ìcono para el gènero-->
+							<th>&nbsp;</th>
+							<th>Item</th>
+							<th>Producto</th>
+							<th>Cantidad</th>
+							<th>Precio</th>
+							<th>Subtotal</th>
+							<!--<th>Pasatiempos</th>-->
+							<th>&nbsp;&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<!-- ìcono para el gènero-->
+							<td class="male">&nbsp;</td>
+							<td>1</td>
+							<td>Arroz</td>
+							<td>50</td>
+							<td>20</td>
+							<td>1000</td>
+							<!--<td>Caminar</td>-->
+							<td>
+								<button Class= "edit" name="EditButton" onclick='ShowModalForEdit(this)'>&nbsp;</button>&nbsp;
+								<button Class= "delete" name="DeleteButton" onclick='deleteRow(this)'>&nbsp;</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
+			</fieldset>
+		</article>
+	</section>
+	<!-- El modal (En capa) -->
+	<div id="myModal" class="modal">
+	<!-- El formulario dentro de la capa-->
+	<form>
+	  <!-- Contenido modal -->
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <span class="close">&times;</span>
+		    <h2>Formulario</h2>
+		  </div>
+		  <div class="modal-body">
+				<fieldset>
+					<legend>Datos Generales</legend>
+					<label>Item</label>
+					<input type="text" name="Item" id="IDTextBox" required="required" />
+					<br>
+					<br>
+				<label>Producto</label>
+				<br>
+				<input type="radio" name="Producto" value="Arroz" required="required">Arroz<br>
+				<input type="radio" name="Producto" value="Aceite" required="required">Aceite<br>
+				<input type="radio" name="Producto" value="Frijoles" required="required">Frijoles<br>
+					<br>
+					<label>Cantidad</label>
+					<input type="text" name="Cantidad" id="CantidadTextBox" required="required">
+					<br>	
+					<br>
+					<label>Precio</label>
+					<input type="text" name="Precio" id="PrecioTextBox" required="required">
+					<br>
+					<br>	
+					<label>Subtotal</label>
+					<input type="text" name="Precio" id="SubTotalTextBox" required="required">
+					<br>			
+		<!-- 		</fieldset>
+				<br>
+				<fieldset>
+					<legend>Precio</legend>
+					<input type="text" name="Item" id="IDTextBox" required="required" />
+				</fieldset>
+				<fieldset>-->
+				<!-- 	<legend>Pasatiempos</legend>
+					<input type="checkbox" name="Pasatiempos" value="Bailar">Bailar<br>
+					<input type="checkbox" name="Pasatiempos" value="Cantar">Cantar<br>
+					<input type="checkbox" name="Pasatiempos" value="Pintar">Pintar<br>
+					<input type="checkbox" name="Pasatiempos" value="Caminar">Caminar<br>
+					<input type="checkbox" name="Pasatiempos" value="Escuchar musica">Escuchar musica<br>
+				</fieldset>-->
+		  </div>
+		  <div class="modal-footer">		  	
+		    <input type="button" name="Insertar" id="InsertButton" value="Insertar" onclick="InsertarRegistro()" />
+		    <input type="button" name="UpdateButton" id="UpdateButton" value="Actualizar" onclick="ActualizarRegistro()"/>    
+		  </div>
+		</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="assets/js/app.js">	</script>
+</body>
+</html>
